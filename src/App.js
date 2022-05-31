@@ -15,12 +15,22 @@ export default class App extends Component {
     ],
   }
 
+  // 添加一個todo,接收的參數是todo對象
+  addTodo = (todoObj) =>{
+    // 獲取原todo
+    const {todos} = this.state
+    // 追加一個todo
+    const newTodos = [todoObj,...todos]
+    // 更新狀態
+    this.setState({todos:newTodos})
+  }
+
   render() {
     const {todos} = this.state
     return (
       <div className="todo-container">
         <div className="todo-wrap">
-          <Header/>
+          <Header addTodo={this.addTodo}/>
           <List todos={todos}/>
           <Footer/>
         </div>
