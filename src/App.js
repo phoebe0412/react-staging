@@ -6,7 +6,8 @@ import './App.css'
 
 export default class App extends Component {
   // 狀態在哪裡,操作狀態的方法就在哪裡
-  
+
+  // 初始化狀態
   state = {
     todos:[
       {id:'001',name:'吃飯',done:true},
