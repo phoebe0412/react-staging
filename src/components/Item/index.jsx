@@ -12,10 +12,17 @@ export default class Item extends Component {
     }
   }
 
-  // 勾選與取消勾選
+  // 勾選與取消勾選一個todo的回調
   handleCheck = (id) =>{
     return (event)=>{
       this.props.updateTodo(id, event.target.checked)
+    }
+  }
+
+  // 刪除一個todo的回調
+  handleDelete = (id) =>{
+    if(window.confirm('確定刪除？')){
+      this.props.deleteTodo(id)
     }
   }
   
@@ -28,7 +35,7 @@ export default class Item extends Component {
           <input type="checkbox" defaultChecked={done} onChange={this.handleCheck(id)}/>
           <span>{name}</span>
         </label>
-        <button className="btn btn-danger" style={{display:mouse? 'block':'none'}}>
+        <button onClick={()=> this.handleDelete(id)} className="btn btn-danger" style={{display:mouse? 'block':'none'}}>
           删除
         </button>
       </li>
