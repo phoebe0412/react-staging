@@ -29,10 +29,35 @@
             console.log('請求錯誤',error)
         }
 
-## 三, 路由得基本使用
+## 三, 路由的基本使用
     1.明確好界面中的導航區, 展示區
     2.導航區的a標籤改為Link標籤
         <Link to="/xxx">Demo</Link>
     3.展示區寫Route標籤進行路徑的匹配
         <Route path="/xxx" component={Demo}/>
     4.<App>的最外層包一個<BrowserRouter>或<HashRouter>
+
+## 四, 路由組件與一般組件
+    1.寫法不同：
+        一般組件：<Demo/>
+        路由組件：<Route path="/demo" components={Demo}>
+    2.存放資料夾位置不同：
+        一般組件：components
+        路由組件：pages
+    3.接收到的props不同：
+        一般組件：寫組件標籤傳遞什麼, 就收到什麼
+        路由組件：接收到三個固定屬性
+                history:
+                    go: ƒ go(n)
+                    goBack: ƒ goBack()
+                    goForward: ƒ goForward()
+                    push: ƒ push(path, state)
+                    replace: ƒ replace(path, state)
+                location:
+                    pathname: "/about"
+                    search: ""
+                    state: undefined
+                match:
+                    params: {}
+                    path: "/about"
+                    url: "/about"
