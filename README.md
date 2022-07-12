@@ -58,10 +58,10 @@
                     search: ""
                     state: undefined
                 match:
-                    params: {}
+                    params: {}git
                     path: "/about"
                     url: "/about"
 ## 五, NavLink與封裝NavLink
     1.NavLink可以實現路由連接的高亮, 通過activeClassName指定樣式名
     2.標籤體內容是一個特殊的標籤屬性
-    3.通過this.props.children可以獲取標籤體內容
+    3.通過this.props.children可以獲取標籤體內容!!!
