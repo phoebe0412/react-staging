@@ -68,3 +68,7 @@
 ## 六, Swith的使用
     1.通常情況下, path和component是一一對應的關係
     2.Switch可以提高路由匹配效率(單一匹配)
+## 七, 解決多級路徑刷新頁面樣式丟失的問題
+    1.public/index.html 中 引入樣式時不寫 ./ 寫 / (常用)
+    2.public/index.html 中 引入樣式時不寫 ./ 寫 %PUBLIC_URL% (常用)
+    3.使用 HashRouter
