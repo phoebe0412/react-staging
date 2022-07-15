@@ -84,3 +84,6 @@
           <Route path="/home" component={Home}/>
           <Redirect to="/about"/>
         </Switch>
+## 十, 嵌套路由
+    1.註冊路由時要寫上父路由的path值
+    2.路由的匹配是按照註冊路由的順序進行的
