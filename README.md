@@ -91,4 +91,9 @@
     1.params參數
         路由連接(攜帶參數):<Link to='/demo/test/tom/18'>詳情</Link>
         註冊路由(聲明接收):<Route path='/demo/test/:name/:age' component={Test}>
-        接收參數:const{name,age} = this.props.match.params
+        接收參數: this.props.match.params
+    2.search參數
+        路由連接(攜帶參數):<Link to='/demo/test?name=tom&age=18'>詳情</Link>
+        註冊路由(無須聲明, 正常註冊即可):<Route path='/demo/test' component={Test}>
+        接收參數: this.props.location.search
+        備註: 獲取到的search是urlencoded編碼字符串, 需要借助query-string解析
