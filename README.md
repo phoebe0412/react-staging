@@ -89,11 +89,16 @@
     2.路由的匹配是按照註冊路由的順序進行的
 ## 十一, 向路由組件傳遞參數
     1.params參數
-        路由連接(攜帶參數):<Link to='/demo/test/tom/18'>詳情</Link>
-        註冊路由(聲明接收):<Route path='/demo/test/:name/:age' component={Test}>
+        路由連接(攜帶參數): <Link to='/demo/test/tom/18'>詳情</Link>
+        註冊路由(聲明接收): <Route path='/demo/test/:name/:age' component={Test}>
         接收參數: this.props.match.params
     2.search參數
-        路由連接(攜帶參數):<Link to='/demo/test?name=tom&age=18'>詳情</Link>
-        註冊路由(無須聲明, 正常註冊即可):<Route path='/demo/test' component={Test}>
+        路由連接(攜帶參數): <Link to='/demo/test?name=tom&age=18'>詳情</Link>
+        註冊路由(無須聲明, 正常註冊即可): <Route path='/demo/test' component={Test}>
         接收參數: this.props.location.search
         備註: 獲取到的search是urlencoded編碼字符串, 需要借助query-string解析
+    3.state參數
+        路由連接(攜帶參數): <Link to={{pathname:'/demo/test', state:{name:'tom',age:18}}}>詳情</Link>
+        註冊路由(無須聲明, 正常註冊即可): <Route path='/demo/test' component={Test}>
+        接收參數: this.props.location.state
+        備註: 刷新也可以保留住參數
